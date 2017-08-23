@@ -1,11 +1,11 @@
-package org.toasthub.service;
+package org.toasthub.common;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.toasthub.core.general.service.EntityManagerMainSvc;
+import org.toasthub.core.common.EntityManagerMainSvc;
 import org.toasthub.core.general.utils.TenantContext;
 import org.toasthub.core.system.model.AppCacheClientDomains;
 import org.toasthub.core.system.model.ClientDomain;

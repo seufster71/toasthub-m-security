@@ -1,10 +1,10 @@
-package org.toasthub.service;
+package org.toasthub.common;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
-import org.toasthub.core.general.service.EntityManagerDataSvc;
+import org.toasthub.core.common.EntityManagerDataSvc;
 
 @Component("EntityManagerDataSvc")
 public class EntityManagerDataSvcImpl implements EntityManagerDataSvc {
