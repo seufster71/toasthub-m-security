@@ -18,8 +18,8 @@ node {
     stage 'build cloud security'
     git credentialsId: '2c3877ec-07ca-437f-b133-dbbf0a44a6bd', url: 'ssh://jenkinsgit@cborghome.ddns.net/opt/gitcborg/toasthub-m-security.git'
     
-    def core_path = "toasthub-m-security"
-    dir(core_path) {
+    def security_m_path = "toasthub-m-security"
+    dir(security_m_path) {
         sh 'mvn clean install'
     }
     
