@@ -1,0 +1,31 @@
+node {
+    stage 'build core'
+    git credentialsId: '2c3877ec-07ca-437f-b133-dbbf0a44a6bd', url: 'ssh://jenkinsgit@cborghome.ddns.net/opt/gitcborg/toasthub-core.git'
+    
+    def core_path = "toasthub-core"
+    dir(core_path) {
+        sh 'mvn clean install'
+    }
+    
+    stage 'build security'
+    git credentialsId: '2c3877ec-07ca-437f-b133-dbbf0a44a6bd', url: 'ssh://jenkinsgit@cborghome.ddns.net/opt/gitcborg/toasthub-security.git'
+    
+    def security_path = "toasthub-security"
+    dir(security_path) {
+        sh 'mvn clean install'
+    }
+    
+    stage 'build cloud security'
+    git credentialsId: '2c3877ec-07ca-437f-b133-dbbf0a44a6bd', url: 'ssh://jenkinsgit@cborghome.ddns.net/opt/gitcborg/toasthub-m-security.git'
+    
+    def core_path = "toasthub-m-security"
+    dir(core_path) {
+        sh 'mvn clean install'
+    }
+    
+    stage 'move to staging area'
+    def workspace = pwd()
+    echo "work space ${workspace}"
+    sh "cp ${workspace}/toasthub-m-security/target/toasthub-m-security-1.0-SNAPSHOT.jar /opt/software"
+    
+}
