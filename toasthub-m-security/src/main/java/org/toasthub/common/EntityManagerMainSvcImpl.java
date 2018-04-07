@@ -33,6 +33,11 @@ public class EntityManagerMainSvcImpl implements EntityManagerMainSvc {
 	public String getAppDomain() {
 		return getClientDomain().getAPPDomain();
 	}
+	
+	@Override
+	public String getCustDomain() {
+		return getClientDomain().getCustDomain();
+	}
 
 	@Override
 	public String getHTMLPrefix() {

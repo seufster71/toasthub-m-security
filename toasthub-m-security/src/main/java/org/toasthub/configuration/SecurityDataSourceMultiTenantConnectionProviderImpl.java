@@ -38,7 +38,7 @@ public class SecurityDataSourceMultiTenantConnectionProviderImpl extends Abstrac
 		}
 		ClientDomain clientDomain = appCacheClientDomains.getClientDomain(tenantIdentifier);
 		if (clientDomain != null) {
-			tenantIdentifier = clientDomain.getAPPDomain();
+			tenantIdentifier = clientDomain.getCustDomain();
 		}
 		logger.info("get security datasource "+ tenantIdentifier);
 		return this.securityDataSourcesApplication.get(tenantIdentifier);

@@ -39,7 +39,7 @@ public class DataDataSourceMultiTenantConnectionProviderImpl extends AbstractDat
 		}
 		ClientDomain clientDomain = appCacheClientDomains.getClientDomain(tenantIdentifier);
 		if (clientDomain != null) {
-			tenantIdentifier = clientDomain.getAPPDomain();
+			tenantIdentifier = clientDomain.getCustDomain();
 		}
 		logger.info("get data datasource "+ tenantIdentifier);
 		return this.dataDataSourcesApplication.get(tenantIdentifier);
